@@ -2,7 +2,7 @@
 import json
 import logging
 import boto3
-from opensearchpy import OpenSearch, RequestsHttpConnection
+from elasticsearch import Elasticsearch, RequestsHttpConnection
 from requests_aws4auth import AWS4Auth
 import inflection
 
