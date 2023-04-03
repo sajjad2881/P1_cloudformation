@@ -75,12 +75,15 @@ def get_opensearch_client():
     session = boto3.Session()
     region = session.region_name
     host = os.environ["OPENSEARCH_ENDPOINT"]
+    print("host was ", host)
+    host = str(host) + "/"
+    print("host is ", host)
     
     service = "es"
     credentials = boto3.Session().get_credentials()
     awsauth = AWS4Auth(credentials.access_key, credentials.secret_key, region, service, session_token=credentials.token)
 
-    return OpenSearch(
+    return Elasticsearch(
     hosts=[host],
     port=443,
     http_auth=awsauth,
