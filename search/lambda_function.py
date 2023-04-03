@@ -15,9 +15,10 @@ region = 'us-east-1' # Replace with your OpenSearch region
 service = 'es'
 credentials = boto3.Session().get_credentials()
 aws_auth = AWS4Auth(credentials.access_key, credentials.secret_key, region, service, session_token=credentials.token)
-
+host = os.environ["OPENSEARCH_ENDPOINT"
+                  
 opensearch = OpenSearch(
-    hosts=[{'host': 'search-photos-bpp72xnr3jxv4jyyvb753ahzty.us-east-1.es.amazonaws.com', 'port': 443}],
+    hosts=[{'host': host, 'port': 443}],
     http_auth=aws_auth,
     use_ssl=True,
     verify_certs=True,
