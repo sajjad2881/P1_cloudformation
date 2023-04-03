@@ -18,7 +18,7 @@ credentials = boto3.Session().get_credentials()
 aws_auth = AWS4Auth(credentials.access_key, credentials.secret_key, region, service, session_token=credentials.token)
 host = os.environ["OPENSEARCH_ENDPOINT"]
                   
-opensearch = OpenSearch(
+opensearch = Elasticsearch(
     hosts=[{'host': host, 'port': 443}],
     http_auth=aws_auth,
     use_ssl=True,
