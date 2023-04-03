@@ -10,7 +10,7 @@ import inflection
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 client = boto3.client('lexv2-runtime')
-# Configure OpenSearch connection!
+# Configure OpenSearch connection!!
 region = 'us-east-1' # Replace with your OpenSearch region
 service = 'es'
 credentials = boto3.Session().get_credentials()
