@@ -5,6 +5,7 @@ import boto3
 from elasticsearch import Elasticsearch, RequestsHttpConnection
 from requests_aws4auth import AWS4Auth
 import inflection
+import os
 
 #Please work
 logger = logging.getLogger()
