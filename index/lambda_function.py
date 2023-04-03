@@ -74,7 +74,7 @@ def lambda_handler(event, context):
 def get_opensearch_client():
     session = boto3.Session()
     region = session.region_name
-    host = "search-photos-bpp72xnr3jxv4jyyvb753ahzty.us-east-1.es.amazonaws.com/"
+    host = os.environ["OPENSEARCH_ENDPOINT"]
     
     service = "es"
     credentials = boto3.Session().get_credentials()
