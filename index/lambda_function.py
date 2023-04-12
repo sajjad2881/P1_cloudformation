@@ -3,7 +3,7 @@ import boto3
 import os
 from elasticsearch import Elasticsearch, RequestsHttpConnection
 from requests_aws4auth import AWS4Auth
-
+#Demo test
 s3 = boto3.client('s3')
 rekognition = boto3.client('rekognition')
 
